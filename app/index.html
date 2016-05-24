@@ -2,23 +2,85 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>That Sexy Game</title>
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
-    <!-- <script type="text/javascript" src="http://localhost:20000/socket.io/socket.io.js"></script> -->
-    <script type="text/javascript" src="https://thatsexygame-server.herokuapp.com/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
     <script type="text/javascript" src="js/net.js"></script>
-    <script>
+    <script type="text/javascript" src="js/ui.js"></script>
+
+    <!-- <script type="text/javascript" src="http://localhost:20000/socket.io/socket.io.js"></script> -->
+    <script type="text/javascript" src="http://thatsexygame-server.herokuapp.com/socket.io/socket.io.js"></script>
+
+    <script type="text/javascript">
       //workaround for name conflict with node.js
       window.$ = window.jQuery = require("jquery");
 
-      $(document).ready(function(){
+      window.addEventListener("load", function(){
+        console.log("ready")
         // socket = io("http://localhost:20000");
         socket = io("http://thatsexygame-server.herokuapp.com");
-        net = new Net();
-      })
+        Core();
+      });
     </script>
+
   </head>
   <body>
+
+    <div id="loginDiv">
+      <form id="loginForm" action="" autocomplete="off">
+        <input id="nickInput" type="text" autofocus="true" placeholder="Nick" /><br />
+        <input id="passInput" type="password" placeholder="Password" /><br />
+        <input id="confPassInput" type="password" placeholder="Confirm password" /><br />
+        <div class="btnGroup">
+          <input id="registerConfirmButton" type="submit" value="Confirm" />
+          <input id="backButton" type="button" value="Back" />
+        </div>
+        <div id="loginModeDiv">
+          <div class="btnGroup">
+            <input id="loginButton" type="submit" value="Sign in" />
+            <input id="registerButton" type="button" value="Sign up" />
+          </div>
+          <input id="guestButton" type="button" value="Play as Guest" />
+        </div>
+      </form>
+    </div>
+
+    <div id="content" class="begone">
+      <div id="lobbiesDiv">
+        <div id="lobbyNav">
+          <button id="newLobby">Create New Lobby</button>
+          <button id="filterLobby">Set Filters</button>
+        </div>
+        <ul id="lobbies"></ul>
+      </div>
+      <div id="usersDiv">
+        <ul id="users"></ul>
+      </div>
+      <div id="globalChatDiv">
+        <ul id="globalChat"></ul>
+        <form id="globalChatForm" action="" autocomplete="off">
+          <input id="gMessage" type="text"  />
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+<!--================================ TEMPLATES ==============================-->
+    <template id="newLobbyDialog">
+      <form id="newLobbyForm" action="" autocomplete="off">
+        <input type="text" id="newLobbyNameInput" placeholder="Lobby Name"  />
+        <select id="newLobbyTypeSelect">
+          <option>Public</option>
+          <option>Private</option>
+        </select>
+        <input type="submit" id="newLobbySubmit" value="Create" />
+      </form>
+    </template>
 
   </body>
 </html>
