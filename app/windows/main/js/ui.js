@@ -66,9 +66,14 @@ function _ui(){
 
 
     // ============================= Chat stuff ================================
+    var greetingMessage = {
+      "local": "Connected to localhost",
+      "official": "Connected to official server",
+      "remote": "Connected to: " + net.currentServer.address
+    };
     $("#globalChat").append(
       $("<li>")
-        .html( "Hello " + $("#nickInput").val() + "." )
+        .html( greetingMessage[net.currentServer.type] + ", hello " + $("#nickInput").val() + "." )
         .css( { "font-weight": "bold" } )
     );
 

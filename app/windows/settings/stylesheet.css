@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow: hidden;
+}
+
+#content{
+  width: 100vw;
+  height: 100vh;
+  background-color: #B8B8B8;
+  padding: 10px;
+}
+
+#content > label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 4px 6px;
+}

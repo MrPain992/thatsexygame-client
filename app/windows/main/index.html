@@ -2,23 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>That Sexy Game</title>
+    <title>Launcher</title>
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
     <script type="text/javascript" src="js/core.js"></script>
     <script type="text/javascript" src="js/net.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
-
-    <!-- <script type="text/javascript" src="http://localhost:20000/socket.io/socket.io.js"></script> -->
-    <script type="text/javascript" src="http://thatsexygame-server.herokuapp.com/socket.io/socket.io.js"></script>
-
     <script type="text/javascript">
       //workaround for name conflict with node.js
       window.$ = window.jQuery = require("jquery");
 
       window.addEventListener("load", function(){
-        console.log("ready")
-        // socket = io("http://localhost:20000");
-        socket = io("http://thatsexygame-server.herokuapp.com");
+        ipcRenderer = require('electron').ipcRenderer;
+
         Core();
       });
     </script>
@@ -64,23 +59,5 @@
         </form>
       </div>
     </div>
-
-
-
-
-
-
-<!--================================ TEMPLATES ==============================-->
-    <template id="newLobbyDialog">
-      <form id="newLobbyForm" action="" autocomplete="off">
-        <input type="text" id="newLobbyNameInput" placeholder="Lobby Name"  />
-        <select id="newLobbyTypeSelect">
-          <option>Public</option>
-          <option>Private</option>
-        </select>
-        <input type="submit" id="newLobbySubmit" value="Create" />
-      </form>
-    </template>
-
   </body>
 </html>
