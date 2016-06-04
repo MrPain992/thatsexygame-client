@@ -1,0 +1,33 @@
+@import url('reset.css');
+
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+*,*:after,*:before {
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+}
+
+/*Debuging*/
+*:not(body){
+  border: 2px dashed black;
+}
+
+.gamePanel, .gameControl {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.gamePanel {
+  background-color: lightgreen;
+}
+
+.gameControl {
+}

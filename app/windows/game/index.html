@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TITEL</title>
+  <!-- <script src="http://localhost:20000/socket.io/socket.io.js"></script> -->
+  <script src="js/jquery-fallback.js"></script>
+  <script>
+    window.$ = window.jQuery = require('jQuery');
+
+    window.addEventListener("load", function(){
+      getScript('js/windowinit.js', function(){
+        console.log('windowinit.js loaded');
+      });
+    });
+
+  </script>
+  <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div class="gameContainer">
+    <div class="gamePanel">
+    </div>
+    <div class="overlayContainer">
+      <div class="playerInformation">
+        <div class="championContainer">
+          <div class="champ-info">
+            <div class="champ-avatar">
+              <div class="champ-level"></div>
+            </div>
+            <div class="champ-exp"></div>
+            <!--
+            # What is done: Champ-avatar, champ-level, champ-exp
+            # TODO: rest of all
+            -->
+          </div>
+        </div>
+        <div class="resourcesContainer"></div>
+      </div>
+      <div class="gameControl">
+        <div class="mapContainer">
+
+        </div>
+        <div class="buildingInformation">
+
+        </div>
+        <div class="buildingContainer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
