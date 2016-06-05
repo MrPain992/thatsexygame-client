@@ -6,7 +6,6 @@ $(document).ready( () => {
     if($("#privateMode").is(":checked"))
       $('#lobbyPassword').prop("disabled", false);
     else{
-      $('#lobbyPassword').val("");
       $('#lobbyPassword').prop("disabled", true);
     }
   });

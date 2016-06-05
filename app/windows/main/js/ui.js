@@ -125,11 +125,41 @@ function _ui(){
 
     // ============================== Lobby stuff ==============================
     $("#newLobby").click(function(){
-      ipcRenderer.send("openLobbyCreator");
+      $("#newLobbyForm").removeClass("_hidden");
     });
-    ipcRenderer.on("newLobby", function(event, data){
-      console.log("sending onto socket - " + data);
-      socket.emit("newLobby", data);
+    $("#closeButton").click(function(){
+      $("#newLobbyForm").addClass("_hidden");
+    })
+
+    // disalbing/enabling pass input whether private or public lobby is beeing created
+    $("input[name='lobbyType']").change(()=>{
+      if($("#privateMode").is(":checked"))
+        $('#lobbyPassword').prop("disabled", false);
+      else{
+        $('#lobbyPassword').prop("disabled", true);
+      }
+    });
+
+    $("#newLobbyForm").submit(function(){
+      event.preventDefault();
+      var lobby = {
+        name: $('#lobbyName').val(),
+        type: $("#privateMode").is(":checked") ? "private" : "public",
+        password: $('#lobbyPassword').val()
+      };
+      if(lobby.name == ""){
+        alert("Lobby name is empty");
+      }
+      else if(lobby.type == "private" && lobby.password == ""){
+        alert("Password is empty");
+      }
+      else{
+        $('#lobbyName').val("");
+        $('#lobbyPassword').val("");
+        
+        socket.emit("newLobby", lobby);
+        $("#newLobbyForm").addClass("_hidden");
+      }
     });
     // ====================== End of Lobby stuff ===========================
 

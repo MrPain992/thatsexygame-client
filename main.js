@@ -39,31 +39,6 @@ function onReady() {
     mainWindow.webContents.send('serverSetting', data);
   });
 
-  ipcMain.on('openLobbyCreator', function(event, arg) {
-    if(typeof newLobbyWindow == "undefined"){
-      newLobbyWindow = new BrowserWindow({
-        "width": 600,
-        "height": 400,
-        "resizable": false,
-        "alwaysOnTop": true
-      });
-      newLobbyWindow.loadURL(`file://${__dirname}/app/windows/newLobby/index.html`);
-      // newLobbyWindow.webContents.openDevTools();
-
-      newLobbyWindow.on('closed', function(){
-        delete newLobbyWindow;
-      });
-    }
-    else {
-      newLobbyWindow.show();
-    }
-  });
-  ipcMain.on("newLobby", function(sender, data){
-    mainWindow.webContents.send('newLobby', data);
-    newLobbyWindow.close();
-    delete newLobbyWindow;
-  });
-
 }
 
 app.on('ready', onReady);

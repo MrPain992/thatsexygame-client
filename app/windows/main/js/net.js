@@ -5,6 +5,7 @@ function _net(){
     type: "local",
     address: ""
   };
+  this.nick = "";
 
   //loading socket.io from localhost (default configuration)
   var url = "http://localhost:20000/socket.io/socket.io.js"
@@ -74,6 +75,7 @@ function _net(){
     socket.emit("login", {"nick": nick, "pass": pass} );
     socket.on("loginResponse", function(data){
       if(data){
+        net.login = nick;
         ui.initLobby();
         net.initGlobalChat();
         net.loadUsers();
@@ -105,7 +107,30 @@ function _net(){
 
     socket.on("updateLobbies", function(data){
       net.lobbies = data;
-      console.log("updating Lobbies - " + data);
+
+      $("#lobbies").html("");
+      for(lobby of data){
+
+        $("#lobbies").append(
+          $("<li>")
+            .css({"font-family":"FontAwesome"})
+            .append(
+              $("<p>").html(lobby.name)
+                .append( " (0/2) " )
+                .append( lobby.type == "private" ? "&#xf023;" : "" )
+            )
+            .append(
+              $("<button>")
+                .prop("id", "joinLobby")
+                .data("lobbyName", lobby.name)
+                .html("Join")
+            )
+        );
+
+      }
+      $("#lobbies button").click(function(){
+        socket.emit("joinLobby", { "nick": $("#nickInput").val(), "lobbyName": $(this).data("lobbyName") });
+      });
     });
 
     socket.on("newLobbyResponse", function(data){

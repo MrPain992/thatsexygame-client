@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Launcher</title>
+    <link type="text/css" rel="stylesheet" href="../../../font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
     <script type="text/javascript" src="js/core.js"></script>
     <script type="text/javascript" src="js/net.js"></script>
@@ -23,7 +24,7 @@
 
     <div id="loginDiv">
       <form id="loginForm" action="" autocomplete="off">
-        <input id="nickInput" type="text" autofocus="true" placeholder="Nick" /><br />
+        <input id="nickInput" type="text" autofocus="true" placeholder="Nick" autofocus /><br />
         <input id="passInput" type="password" placeholder="Password" /><br />
         <input id="confPassInput" type="password" placeholder="Confirm password" /><br />
         <div class="btnGroup">
@@ -59,5 +60,16 @@
         </form>
       </div>
     </div>
+
+    <!-- Windows -->
+    <form id="newLobbyForm" class="_hidden">
+      <i id="closeButton" class="fa fa-close"></i>
+      <input type="text" id="lobbyName" placeholder="Insert Lobby Name…" /><br />
+      <label>Public <input id="publicMode" type="radio" name="lobbyType" checked/></label>
+      <label>Private <input id="privateMode" type="radio" name="lobbyType" /></label><br />
+      <input type="password" id="lobbyPassword" placeholder="Insert Password…" disabled=""/><br />
+      <input type="submit" value="Create"></submit>
+    </form>
+    <!-- ======= -->
   </body>
 </html>
