@@ -31,16 +31,49 @@
           </div>
           <div class="utility-info">
             <div class="utility-spells">
-              <div class="spell" id="s-atk"><span>Q</span></div>
-              <div class="spell" id="s-uti"><span>W</span></div>
-              <div class="spell" id="s-def"><span>E</span></div>
-              <div class="spell" id="s-ult"><span>R</span></div>
+              <div class="spell" id="s-atk" data-level="0"><span>Q</span></div>
+              <div class="spell" id="s-uti" data-level="0"><span>W</span></div>
+              <div class="spell" id="s-def" data-level="0"><span>E</span></div>
+              <div class="spell" id="s-ult" data-level="0"><span>R</span></div>
             </div>
-            <div class="utility-mana"></div>
+            <div class="utility-mana"><span class="mana-counter" id="u-current">100</span>
+               / <span class="mana-counter" id="u-all">100</span></div>
           </div>
         </div>
         <div class="resourcesContainer">
-          <div class="resource"></div>
+          <div class="resource" id="r-wood">
+            <div class="res-cur">
+                <span class="res-icon"></span>
+                <span>10000</span>
+            </div>
+            <div class="res-inc">
+              <span>10</span>
+            </div>
+          </div>
+          <div class="resource" id="r-iron">
+            <div class="res-cur">
+                <span class="res-icon"></span>
+                <span>1000</span>
+            </div>
+            <div class="res-inc">
+              <span>100</span>
+            </div>
+          </div>
+          <div class="resource" id="r-crys">
+            <div class="res-cur">
+                <span class="res-icon"></span>
+                <span>999999</span>
+            </div>
+            <div class="res-inc">
+              <span>100</span>
+            </div>
+          </div>
+          <div class="resource" id="r-ener">
+            <div class="res-cur">
+                <span class="res-icon"></span>
+                <span>999999</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="gameControl">

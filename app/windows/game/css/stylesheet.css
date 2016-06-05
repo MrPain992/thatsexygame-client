@@ -33,7 +33,14 @@ html {
   justify-content: space-between;
 }
 
-/*Champion information*/
+/* ========== Player information ========== */
+/* Main */
+.playerInformation {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Champion information */
 .championContainer {
   display: flex;
   flex-direction: row;
@@ -79,6 +86,7 @@ html {
   position: relative;
   width: 50px;
   height: 50px;
+  font-size: 12px;
 }
 
 .spell span {
@@ -95,6 +103,47 @@ html {
   background-color: purple;
   width: 300px;
   height: 15px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 1px;
+}
+
+/* Resources information */
+.resourcesContainer {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  width: 330px;
+  height: 50px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.res-cur, .res-inc {
+  width: 70px;
+}
+
+.res-inc {
+  padding-left: 5px;
+  padding-top: 3px;
+}
+
+.res-inc span:before {
+  content: '+ ';
+}
+
+.res-icon {
+  background-color: black;
+  display: inline-block;
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+  float: left;
+}
+
+.resource {
+  margin: 5px;
 }
 
 /*Debug*/
@@ -103,5 +152,5 @@ html {
 }
 
 .gameControl {
-  background-color:yellow;
+  background-color: yellow;
 }
