@@ -116,7 +116,7 @@ input:focus {
 }
 
 #users > *, #lobbies > *, #globalChat > * {
-  padding: 8px;
+  padding: 6px 8px;
 }
 
 #globalChatDiv {
@@ -130,11 +130,15 @@ input:focus {
 
 #globalChat {
   height: calc(100% - 55px);
+  font-size: 13px;
   border-bottom: 2px solid lightblue;
   overflow: auto;
 }
 #globalChat > li:nth-child(even){
   background-color: #ddd;
+}
+#globalChat > li{
+  word-wrap: break-word;
 }
 
 #globalChatForm {

@@ -105,8 +105,13 @@ function _net(){
 
     socket.on("updateLobbies", function(data){
       net.lobbies = data;
-
+      console.log("updating Lobbies - " + data);
     });
+
+    socket.on("newLobbyResponse", function(data){
+      if(!data)
+        alert("error creating a new lobby");
+    })
   }
 
   this.initGlobalChat = function(){

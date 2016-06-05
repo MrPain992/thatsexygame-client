@@ -125,9 +125,13 @@ function _ui(){
 
     // ============================== Lobby stuff ==============================
     $("#newLobby").click(function(){
-      // show dialog
-
-    }); // ====================== End of Lobby stuff ===========================
+      ipcRenderer.send("openLobbyCreator");
+    });
+    ipcRenderer.on("newLobby", function(event, data){
+      console.log("sending onto socket - " + data);
+      socket.emit("newLobby", data);
+    });
+    // ====================== End of Lobby stuff ===========================
 
   } // end of initLobby()
 
