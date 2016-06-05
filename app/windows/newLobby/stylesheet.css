@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow: hidden;
+}
+
+#newLobbyForm {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightblue;
+  text-align: center;
+  padding: 60px;
+}
+#newLobbyForm > *{
+  padding: 6px 8px;
+  margin-bottom: 10px;
+}
+#newLobbyForm > label {
+  display: inline-block;
+}
+#newLobbyForm > input[type=text]{
+  border: 1px solid #777;
+  border-radius: 5px;
+}
