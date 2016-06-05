@@ -4,6 +4,7 @@ html {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 *,*:after,*:before {
@@ -13,11 +14,8 @@ html {
 }
 
 /*Debuging*/
-*:not(body){
-  border: 2px dashed black;
-}
 
-.gamePanel, .gameControl {
+.gamePanel, .overlayContainer {
   top: 0;
   left: 0;
   right: 0;
@@ -29,5 +27,81 @@ html {
   background-color: lightgreen;
 }
 
+.overlayContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*Champion information*/
+.championContainer {
+  display: flex;
+  flex-direction: row;
+  width: 370px;
+  height: 85px;
+}
+
+.champ-avatar {
+  background-color: yellow;
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.champ-level {
+  background-color: black;
+  position: absolute;
+  color: white;
+  padding: 5px;
+  min-width: 27px;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+}
+
+.champ-exp {
+  background-color: blue;
+  position: relative;
+  width: 70px;
+  height: 15px;
+}
+
+.utility-spells {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 300px;
+}
+
+.spell{
+  background-color: yellow;
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.spell span {
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 3px;
+}
+
+.utility-mana {
+  background-color: purple;
+  width: 300px;
+  height: 15px;
+}
+
+/*Debug*/
+.championContainer {
+  background-color: red;
+}
+
 .gameControl {
+  background-color:yellow;
 }
