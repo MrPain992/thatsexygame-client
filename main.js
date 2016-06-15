@@ -17,12 +17,22 @@ function onReady(){
     'height': 700,
     'frame': false,
     'resizable': false,
-    'maximizable': false
+    'maximizable': false,
+    'standard-window': false
 
   });
   mainWindow.loadURL(`file://${__dirname}/app/windows/main/index.html`);
   mainWindow.webContents.openDevTools();
   mainWindow.show();
+
+  /* ========== Events ==========*/
+  ipcMain.on('userMinimizeWindow', function(){
+    mainWindow.minimize();
+  });
+
+  ipcMain.on('userCloseWindow', function(){
+      mainWindow.close();
+  });
 
   // gameWindow = new BrowserWindow({
   //   'minWidth': 1000,

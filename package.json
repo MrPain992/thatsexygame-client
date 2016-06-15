@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/MrPain992/thatsexygame-client#readme",
   "dependencies": {
-    "electron-prebuilt": "^1.1.2",
+    "electron-drag": "^1.2.0",
+    "electron-prebuilt": "^1.2.2",
     "ipc": "0.0.1",
     "jquery": "^2.2.4",
     "remote": "^0.2.6",
