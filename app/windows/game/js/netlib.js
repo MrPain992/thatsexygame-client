@@ -1,2 +1,2 @@
-function _net(){
+function _net() {
 }

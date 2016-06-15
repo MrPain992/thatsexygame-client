@@ -3,11 +3,11 @@ $.when(
   $.getScript('js/netlib.js'),
   $.getScript('js/guilib.js'),
   $.Deferred(function( deferred ){ $( deferred.resolve ); })
-).done(function(){
+).done(function() {
   loadingComplete();
 });
 
-function loadingComplete(){
+function loadingComplete() {
   gui = new _gui();
   net = new _net();
 }
