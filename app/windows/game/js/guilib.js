@@ -20,31 +20,29 @@ function _gui() {
     }
   }
 
-  /* Controls */
-  $('.building').on('click', function() {
-    var target = $(this);
-    var building = target.attr('data-building');
+  this.buildingClick = function(target) {
+    if(target.hasClass('building')){
+      var building = target.attr('data-building');
 
-    if(typeof building == 'undefined') {
-      $('.buildingContainer').toggleClass('list-show');
-      $(this).toggleClass('buildinglist-selected');
+      if(typeof building == 'undefined') {
+        $('.buildingContainer').toggleClass('list-show');
+        target.toggleClass('buildinglist-selected');
+      }
+      else {
+        $('.buildingContainer').removeClass('list-show');
+        $('.buildinglist-selected').removeClass('buildinglist-selected');
+        gui.showBuildingInfo(target);
+      }
     }
-    else {
-      $('.buildingContainer').removeClass('list-show');
-      $('.buildinglist-selected').removeClass('buildinglist-selected');
-      gui.showBuildingInfo(target);
-    }
-  });
+    else if(target.hasClass('buildingSlot')){
+      var building = target.attr('data-building');
 
-  $('.buildingSlot').on('click', function(){
-    var target = $(this);
-    var building = target.attr('data-building');
-
-    if(typeof building == 'undefined') {
-      console.log('Budować?')
+      if(typeof building == 'undefined') {
+        console.log('Budować?')
+      }
+      else {
+        gui.showBuildingInfo(target);
+      }
     }
-    else {
-      gui.showBuildingInfo(target);
-    }
-  });
+  }
 }

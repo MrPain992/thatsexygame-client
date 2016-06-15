@@ -1,0 +1,14 @@
+@import url('reset.css');
+
+.windowcontainer {
+  width: 1200px;
+  height: 700px;
+}
+
+.titlebar {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  background-color: red;
+  width: 100%;
+  height: 20px;
+}

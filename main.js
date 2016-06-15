@@ -12,14 +12,26 @@ New onReady function for game development. Uncomment after game completion or if
 */
 
 function onReady(){
-  gameWindow = new BrowserWindow({
-    'minWidth': 1000,
-    'minHeight': 700,
-    'fullscreen': true,
-    'frame': false
+  mainWindow = new BrowserWindow({
+    'width': 1200,
+    'height': 700,
+    'frame': false,
+    'resizable': false,
+    'maximizable': false
+
   });
-  gameWindow.loadURL(`file://${__dirname}/app/windows/game/index.html`);
-  gameWindow.webContents.openDevTools()
+  mainWindow.loadURL(`file://${__dirname}/app/windows/main/index.html`);
+  mainWindow.webContents.openDevTools();
+  mainWindow.show();
+
+  // gameWindow = new BrowserWindow({
+  //   'minWidth': 1000,
+  //   'minHeight': 700,
+  //   'fullscreen': true,
+  //   'frame': false
+  // });
+  // gameWindow.loadURL(`file://${__dirname}/app/windows/game/index.html`);
+  // gameWindow.webContents.openDevTools()
 }
 
 // function onReady() {
