@@ -11,4 +11,8 @@ function _gui() {
   this.confirm = function(text) {
     return confirm(text);
   }
+
+  this.alert = function(text) {
+    return alert(text);
+  }
 }

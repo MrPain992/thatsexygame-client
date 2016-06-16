@@ -7,9 +7,10 @@ let mainWindow;
 let gameWindow;
 var allWindows = []
 
-/*
-New onReady function for game development. Uncomment after game completion or if not needed.
-*/
+
+// ========================================================================================
+// New onReady function for game development. Uncomment after game completion or if not needed.
+// ========================================================================================
 
 function onReady(){
   mainWindow = new BrowserWindow({
@@ -18,11 +19,11 @@ function onReady(){
     'frame': false,
     'resizable': false,
     'maximizable': false,
+    'fullscreenable': false,
     'standard-window': false
-
   });
   mainWindow.loadURL(`file://${__dirname}/app/windows/main/index.html`);
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
   mainWindow.show();
 
   /* ========== Events ==========*/

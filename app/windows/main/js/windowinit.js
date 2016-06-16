@@ -44,7 +44,7 @@ function loadingComplete() {
   // ]);
   // Menu.setApplicationMenu(menu);
   // ===========================================================================
-
+  socket = io('http://localhost:20000');
   net = new _net();
   gui = new _gui();
 }

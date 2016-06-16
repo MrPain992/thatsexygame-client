@@ -27,7 +27,10 @@ html {
 .windowcontainer {
   width: 1200px;
   height: 700px;
+  overflow: hidden;
 }
+
+/* == Titlebar == */
 
 .titlebar {
   background-color: hsla(216, 18%, 16%, 1);
@@ -45,7 +48,6 @@ html {
 .titlebar__title {
   padding: 7px 10px;
   font-size: 0.8em;
-  width: 1100px;
   flex: 1;
   -webkit-app-region: drag;
 }
@@ -70,4 +72,144 @@ html {
 
 .titlebar__controls--close:hover {
   background-color: hsla(0, 72%, 49%, 1);
+}
+
+/* ========== Pages ========== */
+.page {
+  background-color: hsla(217, 10%, 25%, 1);
+  width: 100vw;
+  height: calc(100vh - 26px);
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.page--visible {
+  display: block;
+}
+
+.page__popup {
+  position: absolute;
+  padding: 20px;
+  background-color: hsla(216, 18%, 16%, 0.9);
+  top: 100%;
+  transform: translateX(-50%);
+  transition: all 500ms ease-in-out;
+}
+
+.popup--visible {
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+strong {
+  font-weight: bold;
+  color: hsla(97, 52%, 54%, 1);
+}
+
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.greenbutton, .redbutton {
+  text-transform: uppercase;
+  padding: 15px!important;
+  color: hsla(0, 0%, 93%, 1);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.greenbutton {
+  background-color: hsla(97, 52%, 54%, 1);
+}
+
+.greenbutton:hover {
+  background-color: hsla(97, 52%, 44%, 1)
+}
+
+.redbutton {
+  background-color: hsla(0, 72%, 49%, 1);
+}
+
+.redbutton:hover {
+  background-color: hsla(0, 72%, 39%, 1);
+}
+
+.validate {
+  border: 3px solid hsla(0, 72%, 39%, 1)!important;
+}
+
+.error {
+  background-color: hsla(0, 72%, 39%, 0.2);
+  color: hsla(0, 0%, 93%, 1);
+}
+.error > div {
+  padding: 10px;
+}
+
+/* ========== Login page ==========  */
+.page__login {
+  background-image: url('../img/splasharts/pinkuru.png');
+  background-size: cover;
+}
+
+.logo {
+  width: 300px;
+  height: 200px;
+  background-image: url('../img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 5%;
+  left: 22%;
+  transform: translate(-50%, 0%);
+}
+
+
+#login {
+  width: 300px;
+  padding: 20px;
+  background-color: hsla(216, 18%, 16%, 0.9);
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -40%);
+}
+
+.form {
+  color: hsla(0, 0%, 93%, 1);
+}
+
+.form > * {
+  display: block;
+}
+
+.form input, .form button {
+  border: none;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.form input {
+  outline: none;
+  font-size: 16px;
+}
+
+.form label {
+  padding: 5px 0;
+  font-size: 12px;
+}
+
+.form span {
+  text-align: center;
+}
+
+/* ======= Registration ======*/
+.popup--registration {
+  left: 65%;
+  width: 500px;
 }
