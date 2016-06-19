@@ -23,6 +23,7 @@
     "ipc": "0.0.1",
     "jquery": "^2.2.4",
     "remote": "^0.2.6",
-    "socket.io": "^1.4.6"
+    "socket.io": "^1.4.6",
+    "socket.io-client": "^1.4.6"
   }
 }

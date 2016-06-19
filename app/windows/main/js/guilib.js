@@ -1,7 +1,6 @@
 function _gui() {
   this.closeWindow = function() {
-    if(gui.confirm('Are you sure?'))
-      ipcRenderer.send('userCloseWindow');
+    ipcRenderer.send('userCloseWindow');
   }
 
   this.minimizeWindow = function() {
@@ -14,5 +13,9 @@ function _gui() {
 
   this.alert = function(text) {
     return alert(text);
+  }
+
+  this.connectionStatus = function(status) {
+    
   }
 }

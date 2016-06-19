@@ -23,9 +23,19 @@ function onReady(){
     'standard-window': false
   });
   mainWindow.loadURL(`file://${__dirname}/app/windows/main/index.html`);
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   mainWindow.show();
 
+  // gameWindow = new BrowserWindow({
+  //     'minWidth': 1000,
+  //     'minHeight': 700,
+  //     'fullscreen': true,
+  //     'frame': false
+  //   });
+  //   gameWindow.loadURL(`file://${__dirname}/app/windows/game/index.html`);
+  //   gameWindow.webContents.openDevTools()
+  //
+  }
   /* ========== Events ==========*/
   ipcMain.on('userMinimizeWindow', function(){
     mainWindow.minimize();
@@ -35,15 +45,7 @@ function onReady(){
       mainWindow.close();
   });
 
-  // gameWindow = new BrowserWindow({
-  //   'minWidth': 1000,
-  //   'minHeight': 700,
-  //   'fullscreen': true,
-  //   'frame': false
-  // });
-  // gameWindow.loadURL(`file://${__dirname}/app/windows/game/index.html`);
-  // gameWindow.webContents.openDevTools()
-}
+
 
 // function onReady() {
 //   mainWindow = new BrowserWindow({

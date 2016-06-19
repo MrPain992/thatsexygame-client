@@ -58,7 +58,7 @@ $('[name=register]').on('click', function(){
     if(!/^[a-zA-Z0-9]+$/.test(login.val())) {
       good = false;
       login.addClass('validate');
-      error += "<div>• Dozwolone tylko litery i cyfry w nazwie</div>"
+      error += "<div>• Dozwolone tylko litery i cyfry w nazwie</div>";
     }
     else {
       good = true;
@@ -69,7 +69,7 @@ $('[name=register]').on('click', function(){
       good = false;
       password.addClass('validate');
       password2.addClass('validate');
-      error += "<div>• Hasła nie są identyczne</div>"
+      error += "<div>• Hasła nie są identyczne</div>";
     }
     else {
       good = true;
@@ -79,9 +79,10 @@ $('[name=register]').on('click', function(){
   }
   else {
     login.addClass('validate');
-    password.removeClass('validate');
-    password2.removeClass('validate');
-    error = "<div>• Pola nie mogą być puste"
+    password.addClass('validate');
+    password2.addClass('validate');
+    good = false;
+    error = "<div>• Pola nie mogą być puste";
   }
 
   if(good){
